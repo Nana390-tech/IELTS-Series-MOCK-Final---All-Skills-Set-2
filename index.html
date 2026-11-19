@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IELTS Final Exam Day · Set 2</title>
+<style>
+:root{--night:#22102a;--night2:#43204a;--aurora1:#f59e0b;--aurora2:#ec4899;--aurora3:#14b8a6;--ink:#1d2140;--muted:#606585;--card:#ffffff;
+ --L:#7f1d1d;--Lsoft:#fbe9e9;--R:#134e4a;--Rsoft:#e2f2ef;--W:#831843;--Wsoft:#fbe7f0;--good:#16a34a;--mid:#f59e0b;--low:#e11d48}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;font-size:18px;line-height:1.6;color:var(--ink);background:var(--night)}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+.ar{font-family:Tahoma,"Segoe UI",Arial,sans-serif;direction:rtl;unicode-bidi:isolate}
+.hidden{display:none!important}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;padding:60px 20px 120px;text-align:center;isolation:isolate}
+#stars{position:absolute;inset:0;z-index:-1}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:-2;animation:float 16s ease-in-out infinite}
+.b1{width:480px;height:480px;background:var(--aurora1);left:-120px;top:-140px}
+.b2{width:520px;height:520px;background:var(--aurora2);right:-160px;top:-60px;animation-delay:-5s}
+.b3{width:380px;height:380px;background:var(--aurora3);left:35%;bottom:-220px;animation-delay:-9s;opacity:.4}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+.chip{display:inline-block;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);backdrop-filter:blur(6px);padding:5px 16px;border-radius:30px;font-size:.8em;letter-spacing:.12em;text-transform:uppercase;font-weight:700;animation:drop .8s both}
+.hero h1{font-size:clamp(2.1em,5vw,3.6em);line-height:1.08;margin:18px 0 12px;font-weight:900;background:linear-gradient(90deg,#fff,#c4f1ea,#ddd0ff,#ffd9b8,#fff);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 8s linear infinite,drop .9s .1s both}
+@keyframes shine{to{background-position:300% 0}}
+@keyframes drop{from{opacity:0;transform:translateY(-20px)}}
+.hero p.lead{max-width:680px;margin:0 auto;opacity:.88;font-size:1.08em;animation:drop 1s .2s both}
+.hello{margin-top:16px;font-weight:700;color:#c4f1ea;animation:drop 1s .3s both}
+.steps{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;animation:drop 1s .4s both}
+.step{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:10px 16px;font-size:.88em;display:flex;gap:10px;align-items:center;backdrop-filter:blur(6px)}
+.step b{display:inline-flex;width:28px;height:28px;border-radius:50%;background:#fff;color:var(--night);align-items:center;justify-content:center;font-size:.9em}
+.wave{position:absolute;left:0;right:0;bottom:-2px;height:90px;z-index:-1}
+
+/* ---------- journey ---------- */
+main{background:#f8f3f1;position:relative}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.journey{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:-90px;padding-bottom:30px}
+.path{position:absolute;left:12%;right:12%;top:120px;height:4px;z-index:0;background:repeating-linear-gradient(90deg,#c9c5e8 0 12px,transparent 12px 22px);animation:march 1.2s linear infinite}
+@keyframes march{to{background-position:22px 0}}
+.ecard{position:relative;z-index:1;background:var(--card);border-radius:26px;padding:26px 24px 24px;box-shadow:0 18px 50px rgba(20,20,60,.18);transition:transform .25s,box-shadow .25s;opacity:0;animation:rise .8s forwards;border-top:8px solid var(--c)}
+.ecard:nth-child(2){animation-delay:.15s}.ecard:nth-child(3){animation-delay:.3s}.ecard:nth-child(4){animation-delay:.45s}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.ecard:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(20,20,60,.25)}
+.ecard .num{position:absolute;top:-22px;right:22px;width:46px;height:46px;border-radius:50%;background:var(--c);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1.2em;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.icon{width:96px;height:96px;border-radius:24px;background:var(--cs);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.ecard h2{margin:0;font-size:1.5em;color:var(--c)}
+.ecard .meta{color:var(--muted);font-size:.88em;margin:4px 0 12px}
+.ecard ul{margin:0 0 16px;padding-left:20px;font-size:.92em}
+.status{display:flex;align-items:center;gap:14px;background:var(--cs);border-radius:16px;padding:10px 14px;margin-bottom:14px;min-height:96px}
+.status .txt{font-size:.9em}
+.status .txt b{display:block;font-size:1.05em;color:var(--c)}
+.ring{width:76px;height:76px;flex:0 0 auto;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring .val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.25em;color:var(--c)}
+.ring circle.fg{transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1)}
+.pending-dot{width:76px;height:76px;border-radius:50%;border:4px dashed var(--c);opacity:.45;display:flex;align-items:center;justify-content:center;font-size:1.6em;animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:none;border-radius:14px;padding:12px 20px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.15s}
+.btn.go{background:var(--c);color:#fff}
+.btn.go:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.btn.fb{background:#fff;color:var(--c);border:2px solid var(--c)}
+.btn.fb:disabled{opacity:.35;cursor:not-allowed}
+/* icon animations */
+.bar{animation:eq 1s ease-in-out infinite;transform-origin:center bottom;transform-box:fill-box}
+.bar:nth-child(2){animation-delay:-.2s}.bar:nth-child(3){animation-delay:-.4s}.bar:nth-child(4){animation-delay:-.6s}.bar:nth-child(5){animation-delay:-.8s}
+@keyframes eq{50%{transform:scaleY(.35)}}
+.page{animation:flip 3s ease-in-out infinite;transform-origin:50px 50%;transform-box:view-box}
+@keyframes flip{0%,30%{transform:scaleX(1)}50%,80%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
+.pen{animation:write 2.6s ease-in-out infinite}
+@keyframes write{0%{transform:translate(-18px,0)}50%{transform:translate(14px,4px)}100%{transform:translate(-18px,0)}}
+.ink{stroke-dasharray:70;stroke-dashoffset:70;animation:inkline 2.6s ease-in-out infinite}
+@keyframes inkline{0%{stroke-dashoffset:70}50%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+
+/* ---------- overall ---------- */
+.overall{background:linear-gradient(135deg,var(--night),var(--night2));color:#fff;border-radius:28px;padding:28px 30px;margin:20px 0 34px;display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:20px;align-items:center;position:relative;overflow:hidden}
+.overall::after{content:"";position:absolute;width:300px;height:300px;right:-80px;top:-120px;background:var(--aurora2);filter:blur(80px);opacity:.35}
+.overall h3{margin:0 0 4px;font-size:1.35em}
+.overall p{margin:0;opacity:.8;font-size:.9em}
+.ov{text-align:center;position:relative;z-index:1}
+.ov .lbl{font-size:.75em;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.ov .big{font-size:2.6em;font-weight:900;line-height:1.1}
+.ov.total .big{background:linear-gradient(90deg,var(--aurora1),var(--aurora2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- feedback ---------- */
+#feedback{scroll-margin-top:20px;padding-bottom:40px}
+.fhead{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.fhead h2{margin:0;font-size:1.8em}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:2px solid var(--c);background:#fff;color:var(--c);border-radius:30px;padding:8px 20px;font-weight:800}
+.tab.on{background:var(--c);color:#fff}
+.tab:disabled{opacity:.35;cursor:not-allowed}
+.panel{background:#fff;border-radius:26px;padding:28px 30px;box-shadow:0 10px 30px rgba(20,20,60,.08);animation:rise .5s both}
+.empty{text-align:center;color:var(--muted);padding:40px 20px}
+.empty .e{font-size:3em}
+.fb-hero{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--cs);border-radius:20px;padding:20px 24px;margin-bottom:22px}
+.fb-hero h3{margin:0 0 6px;font-size:1.4em;color:var(--c)}
+.fb-hero p{margin:0}
+.ladder{display:flex;gap:4px;margin-top:12px;flex-wrap:wrap}
+.ladder span{flex:1;min-width:46px;text-align:center;font-size:.75em;font-weight:800;padding:6px 0;border-radius:8px;background:#fff;color:var(--muted);border:2px solid transparent}
+.ladder span.hit{background:var(--c);color:#fff}
+.ladder span.target{border-color:var(--good)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.box{border:2px solid #eeedf6;border-radius:18px;padding:16px 20px;margin-bottom:22px}
+.box h4{margin:0 0 10px;font-size:1.1em;color:var(--c);display:flex;gap:8px;align-items:center}
+.brow{display:grid;grid-template-columns:1.5fr 60px 1.6fr;gap:10px;align-items:center;padding:5px 0;font-size:.92em}
+.bbar{height:12px;background:#eeedf6;border-radius:10px;overflow:hidden}
+.bbar i{display:block;height:100%;width:0;border-radius:10px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.tag{display:inline-block;font-size:.72em;font-weight:800;border-radius:20px;padding:1px 9px;margin-left:6px;vertical-align:middle}
+.tag.s{background:#dcfce7;color:#166534}.tag.w{background:#ffe4e6;color:#9f1239}.tag.m{background:#fef3c7;color:#92400e}
+.tipcard{background:#fafaff;border-left:6px solid var(--c);border-radius:12px;padding:12px 16px;margin-bottom:12px}
+.tipcard b{color:var(--c)}
+.tipcard ol{margin:6px 0 0;padding-left:22px}
+.tipcard li{margin:3px 0}
+.insight{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed #eeedf6}
+.insight:last-child{border-bottom:none}
+.insight .i{font-size:1.3em;line-height:1.3}
+.plan{counter-reset:p;list-style:none;padding:0;margin:0}
+.plan li{counter-increment:p;position:relative;padding:12px 14px 12px 60px;background:#fafaff;border-radius:14px;margin-bottom:10px}
+.plan li::before{content:counter(p);position:absolute;left:14px;top:12px;width:32px;height:32px;border-radius:50%;background:var(--c);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center}
+.plan .when{display:inline-block;font-size:.75em;font-weight:800;color:var(--c);background:var(--cs);border-radius:20px;padding:0 10px;margin-left:6px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.links a{background:var(--cs);color:var(--c);font-weight:700;text-decoration:none;border-radius:12px;padding:8px 14px;font-size:.9em}
+.links a:hover{filter:brightness(.95)}
+.wrongs{display:flex;flex-wrap:wrap;gap:6px}
+.wrongs span{background:#ffe4e6;color:#9f1239;border-radius:8px;padding:2px 9px;font-weight:800;font-size:.85em}
+.crit{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.crit div{background:var(--cs);border-radius:16px;padding:14px;text-align:center}
+.crit .cn{font-size:.78em;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.crit .lv{font-size:1.05em;font-weight:900;margin:4px 0}
+.dots{display:flex;gap:4px;justify-content:center}
+.dots i{width:22px;height:8px;border-radius:5px;background:#fff}
+.dots i.on{background:var(--c)}
+.checks{list-style:none;padding:0;margin:0}
+.checks li{padding:6px 0;border-bottom:1px solid #f2f1f8;display:flex;gap:10px}
+.checks li:last-child{border-bottom:none}
+.wsub{display:flex;gap:8px;margin-bottom:16px}
+.wsub button{border:2px solid var(--W);background:#fff;color:var(--W);border-radius:12px;padding:6px 16px;font-weight:800}
+.wsub button.on{background:var(--W);color:#fff}
+.note{font-size:.85em;color:var(--muted)}
+.chipw{display:inline-block;background:#fff;border:2px solid #eeedf6;border-radius:20px;padding:0 10px;margin:2px;font-size:.85em}
+
+/* ---------- tools ---------- */
+.tools{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:10px 0 30px}
+.tbtn{background:#fff;border:2px solid #d9d6ee;color:var(--ink);border-radius:14px;padding:10px 18px;font-weight:700}
+.tbtn:hover{border-color:var(--aurora2)}
+footer{text-align:center;color:#8d90b0;font-size:.85em;padding:24px 10px 40px;background:#f8f3f1}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--night);color:#fff;padding:12px 22px;border-radius:14px;z-index:90;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:80}
+.modal{position:fixed;inset:0;background:rgba(10,12,40,.6);display:flex;align-items:center;justify-content:center;z-index:70;padding:16px}
+.modal .box2{background:#fff;border-radius:20px;padding:24px 26px;max-width:460px}
+.modal .row{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+
+@media (max-width:900px){
+ .journey{grid-template-columns:1fr;margin-top:-70px}.path{display:none}
+ .overall{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.crit{grid-template-columns:1fr 1fr}
+ .fb-hero{grid-template-columns:1fr;text-align:center}.fb-hero .ring{margin:0 auto}
+}
+@media print{
+ body{background:#fff}.hero,.journey,.tools,.tabs,.no-print{display:none!important}
+ main{background:#fff}.panel{box-shadow:none;animation:none}.box,.tipcard,.plan li{break-inside:avoid}
+ .printall .pp{display:block!important}
+}
+
+/* ===== Set 2 · Desert sunrise theme ===== */
+.hero{background:linear-gradient(180deg,#fde9cc 0%,#fcc79e 45%,#f29a80 100%);background-size:100% 220%;animation:sky 14s ease-in-out infinite alternate;color:#3a1620;padding-bottom:180px}
+@keyframes sky{to{background-position:0 100%}}
+.blob,.wave{display:none}
+.sun{position:absolute;left:50%;top:170px;width:230px;height:230px;margin-left:-115px;border-radius:50%;background:radial-gradient(circle,#fff8dc 0%,#ffd76e 42%,#ffb347 68%,rgba(255,179,71,0) 71%);z-index:-1;animation:sunrise 2.6s cubic-bezier(.2,.8,.2,1) both,sunglow 5s ease-in-out 2.6s infinite}
+@keyframes sunrise{from{transform:translateY(190px);opacity:.25}}
+.sun{top:auto;bottom:40px}
+.rays{top:auto;bottom:-225px;margin:0 0 0 -380px}
+@keyframes sunglow{50%{filter:brightness(1.07) drop-shadow(0 0 45px #ffd36b)}}
+.rays{position:absolute;left:50%;top:285px;width:760px;height:760px;margin:-380px 0 0 -380px;z-index:-2;border-radius:50%;background:repeating-conic-gradient(rgba(255,255,255,.28) 0 5deg,transparent 5deg 15deg);-webkit-mask:radial-gradient(circle,#000 22%,transparent 68%);mask:radial-gradient(circle,#000 22%,transparent 68%);animation:spin 70s linear infinite,fadein 3s both}
+@keyframes fadein{from{opacity:0}}
+.chip{border-color:rgba(90,30,44,.35);background:rgba(255,255,255,.5);color:#5a1e2c}
+.hero h1{background:linear-gradient(90deg,#7f1d1d,#831843,#134e4a,#a16207,#7f1d1d);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+.hero p.lead{opacity:1;color:#4a1d26}
+.hello{color:#134e4a}
+.step{background:rgba(255,255,255,.6);border-color:rgba(255,255,255,.9);color:#3a1620;box-shadow:0 6px 18px rgba(127,29,29,.12)}
+.step b{background:#7f1d1d;color:#fff}
+.dunes{position:absolute;left:0;right:0;bottom:-2px;height:170px;z-index:-1;overflow:hidden}
+.dunes svg{position:absolute;bottom:0;left:0;width:200%;height:100%}
+.d3{animation:drift 70s linear infinite}.d2{animation:drift 45s linear infinite reverse}.d1{animation:drift 30s linear infinite}
+@keyframes drift{to{transform:translateX(-50%)}}
+.journey{margin-top:-60px}
+.path{background:linear-gradient(90deg,#eab308,#f97360,#14b8a6);height:4px;border-radius:4px;animation:none;opacity:.7}
+.path::after{content:"";position:absolute;top:-7px;left:0;width:18px;height:18px;border-radius:50%;background:#f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.25),0 0 18px #f59e0b;animation:travel 5s ease-in-out infinite alternate}
+@keyframes travel{to{left:calc(100% - 18px)}}
+.ecard{animation:flipin .9s cubic-bezier(.2,.8,.2,1) forwards;transform-origin:top center}
+@keyframes flipin{from{opacity:0;transform:perspective(900px) rotateX(-40deg) translateY(30px)}to{opacity:1;transform:none}}
+.ecard .num{animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.overall{background:linear-gradient(135deg,#134e4a,#7f1d1d 62%,#831843)}
+.overall::after{background:#f59e0b;opacity:.35}
+.ov.total .big{background:linear-gradient(90deg,#fde68a,#fdba74);-webkit-background-clip:text;background-clip:text;color:transparent}
+footer{background:#f8f3f1}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ecard{opacity:1}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="rays"></div><div class="sun"></div>
+  <span class="chip">LSC 0316 · IELTS Final Exam Day · Set 2</span>
+  <h1>Your Final Exam Journey · Set 2</h1>
+  <p class="lead">Three exams, real exam conditions, and personal feedback after each one. Take them in IELTS order: <b>Listening → Reading → Writing</b>.</p>
+  <div class="hello" id="hello"></div>
+  <div class="steps">
+    <div class="step"><b>1</b><span>Press <i>Start exam</i>. It opens in a new tab.</span></div>
+    <div class="step"><b>2</b><span>Finish and submit the exam.</span></div>
+    <div class="step"><b>3</b><span>Come back here for your feedback and next steps.</span></div>
+  </div>
+  <div class="dunes" aria-hidden="true">
+   <svg class="d3" viewBox="0 0 2880 170" preserveAspectRatio="none"><path fill="#eeb07e" opacity=".75" d="M0,170 L0,41.4 L24,39.4 L48,38.7 L72,39.3 L96,41.0 L120,43.5 L144,46.5 L168,49.5 L192,52.4 L216,54.7 L240,56.2 L264,56.9 L288,56.7 L312,55.7 L336,54.1 L360,52.2 L384,50.3 L408,48.7 L432,47.9 L456,48.0 L480,49.3 L504,51.9 L528,55.7 L552,60.5 L576,66.3 L600,72.5 L624,78.9 L648,85.1 L672,90.6 L696,95.2 L720,98.6 L744,100.6 L768,101.3 L792,100.7 L816,99.0 L840,96.5 L864,93.5 L888,90.5 L912,87.6 L936,85.3 L960,83.8 L984,83.1 L1008,83.3 L1032,84.3 L1056,85.9 L1080,87.8 L1104,89.7 L1128,91.3 L1152,92.1 L1176,92.0 L1200,90.7 L1224,88.1 L1248,84.3 L1272,79.5 L1296,73.7 L1320,67.5 L1344,61.1 L1368,54.9 L1392,49.4 L1416,44.8 L1440,41.4 L1464,39.4 L1488,38.7 L1512,39.3 L1536,41.0 L1560,43.5 L1584,46.5 L1608,49.5 L1632,52.4 L1656,54.7 L1680,56.2 L1704,56.9 L1728,56.7 L1752,55.7 L1776,54.1 L1800,52.2 L1824,50.3 L1848,48.7 L1872,47.9 L1896,48.0 L1920,49.3 L1944,51.9 L1968,55.7 L1992,60.5 L2016,66.3 L2040,72.5 L2064,78.9 L2088,85.1 L2112,90.6 L2136,95.2 L2160,98.6 L2184,100.6 L2208,101.3 L2232,100.7 L2256,99.0 L2280,96.5 L2304,93.5 L2328,90.5 L2352,87.6 L2376,85.3 L2400,83.8 L2424,83.1 L2448,83.3 L2472,84.3 L2496,85.9 L2520,87.8 L2544,89.7 L2568,91.3 L2592,92.1 L2616,92.0 L2640,90.7 L2664,88.1 L2688,84.3 L2712,79.5 L2736,73.7 L2760,67.5 L2784,61.1 L2808,54.9 L2832,49.4 L2856,44.8 L2880,41.4 L2880,170 Z"/></svg>
+   <svg class="d2" viewBox="0 0 2880 170" preserveAspectRatio="none"><path fill="#e3966a" d="M0,170 L0,85.3 L24,90.4 L48,93.8 L72,95.2 L96,95.1 L120,94.4 L144,94.2 L168,95.6 L192,99.3 L216,105.3 L240,112.8 L264,120.6 L288,127.1 L312,131.2 L336,131.8 L360,128.7 L384,122.7 L408,114.8 L432,106.5 L456,99.4 L480,94.3 L504,91.8 L528,91.3 L552,92.1 L576,92.9 L600,92.7 L624,90.7 L648,86.9 L672,81.9 L696,76.8 L720,73.1 L744,71.9 L768,74.0 L792,79.4 L816,87.6 L840,97.1 L864,106.4 L888,114.2 L912,119.2 L936,121.1 L960,120.4 L984,117.9 L1008,114.9 L1032,112.7 L1056,111.9 L1080,112.9 L1104,115.1 L1128,117.5 L1152,118.8 L1176,117.9 L1200,114.2 L1224,107.6 L1248,98.9 L1272,89.4 L1296,80.7 L1320,74.2 L1344,70.9 L1368,71.1 L1392,74.3 L1416,79.5 L1440,85.3 L1464,90.4 L1488,93.8 L1512,95.2 L1536,95.1 L1560,94.4 L1584,94.2 L1608,95.6 L1632,99.3 L1656,105.3 L1680,112.8 L1704,120.6 L1728,127.1 L1752,131.2 L1776,131.8 L1800,128.7 L1824,122.7 L1848,114.8 L1872,106.5 L1896,99.4 L1920,94.3 L1944,91.8 L1968,91.3 L1992,92.1 L2016,92.9 L2040,92.7 L2064,90.7 L2088,86.9 L2112,81.9 L2136,76.8 L2160,73.1 L2184,71.9 L2208,74.0 L2232,79.4 L2256,87.6 L2280,97.1 L2304,106.4 L2328,114.2 L2352,119.2 L2376,121.1 L2400,120.4 L2424,117.9 L2448,114.9 L2472,112.7 L2496,111.9 L2520,112.9 L2544,115.1 L2568,117.5 L2592,118.8 L2616,117.9 L2640,114.2 L2664,107.6 L2688,98.9 L2712,89.4 L2736,80.7 L2760,74.2 L2784,70.9 L2808,71.1 L2832,74.3 L2856,79.5 L2880,85.3 L2880,170 Z"/></svg>
+   <svg class="d1" viewBox="0 0 2880 170" preserveAspectRatio="none"><path fill="#f8f3f1" d="M0,170 L0,132.0 L24,130.4 L48,129.2 L72,128.9 L96,129.9 L120,132.2 L144,135.6 L168,139.9 L192,144.4 L216,148.7 L240,152.1 L264,154.2 L288,154.8 L312,153.9 L336,151.7 L360,148.7 L384,145.3 L408,142.3 L432,140.0 L456,138.9 L480,138.9 L504,140.1 L528,142.0 L552,144.2 L576,146.1 L600,147.1 L624,147.0 L648,145.4 L672,142.3 L696,138.2 L720,133.3 L744,128.4 L768,123.8 L792,120.3 L816,118.1 L840,117.3 L864,117.9 L888,119.5 L912,121.6 L936,123.6 L960,125.1 L984,125.5 L1008,124.8 L1032,122.9 L1056,120.0 L1080,116.7 L1104,113.4 L1128,110.7 L1152,109.2 L1176,109.1 L1200,110.6 L1224,113.5 L1248,117.4 L1272,121.8 L1296,126.2 L1320,130.0 L1344,132.7 L1368,134.2 L1392,134.4 L1416,133.5 L1440,132.0 L1464,130.4 L1488,129.2 L1512,128.9 L1536,129.9 L1560,132.2 L1584,135.6 L1608,139.9 L1632,144.4 L1656,148.7 L1680,152.1 L1704,154.2 L1728,154.8 L1752,153.9 L1776,151.7 L1800,148.7 L1824,145.3 L1848,142.3 L1872,140.0 L1896,138.9 L1920,138.9 L1944,140.1 L1968,142.0 L1992,144.2 L2016,146.1 L2040,147.1 L2064,147.0 L2088,145.4 L2112,142.3 L2136,138.2 L2160,133.3 L2184,128.4 L2208,123.8 L2232,120.3 L2256,118.1 L2280,117.3 L2304,117.9 L2328,119.5 L2352,121.6 L2376,123.6 L2400,125.1 L2424,125.5 L2448,124.8 L2472,122.9 L2496,120.0 L2520,116.7 L2544,113.4 L2568,110.7 L2592,109.2 L2616,109.1 L2640,110.6 L2664,113.5 L2688,117.4 L2712,121.8 L2736,126.2 L2760,130.0 L2784,132.7 L2808,134.2 L2832,134.4 L2856,133.5 L2880,132.0 L2880,170 Z"/></svg>
+  </div>
+</header>
+
+<main>
+ <div class="wrap">
+  <section class="journey" id="journey"><div class="path"></div></section>
+
+  <section class="overall" id="overall">
+    <div><h3>Your exam day at a glance</h3><p id="ovText">Complete the Listening and Reading exams to see your average band. Your teacher marks Writing.</p></div>
+    <div class="ov"><div class="lbl">Listening</div><div class="big" id="ovL">–</div></div>
+    <div class="ov"><div class="lbl">Reading</div><div class="big" id="ovR">–</div></div>
+    <div class="ov total"><div class="lbl">L + R average</div><div class="big" id="ovA">–</div></div>
+  </section>
+
+  <section id="feedback">
+    <div class="fhead"><h2>📊 Your feedback</h2>
+      <div class="tabs" id="tabs">
+        <button class="tab" data-k="listening" style="--c:var(--L)">🎧 Listening</button>
+        <button class="tab" data-k="reading" style="--c:var(--R)">📖 Reading</button>
+        <button class="tab" data-k="writing" style="--c:var(--W)">✍️ Writing</button>
+      </div></div>
+    <div id="panel"></div>
+  </section>
+
+  <div class="tools no-print">
+    <label class="tbtn">📂 Load a results file<input type="file" id="loadRes" accept=".json,application/json" multiple hidden></label>
+    <button class="tbtn" id="printBtn">🖨 Print / save my feedback as PDF</button>
+    <button class="tbtn" id="clearBtn">🧹 Clear results on this computer</button>
+  </div>
+ </div>
+</main>
+<footer>Results are kept only in this browser on this computer. On a shared computer, press <b>Clear results</b> when you finish.<br>Designed by: Nazila Motahari</footer>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const KEY='ieltsFinalSet2:';
+const TARGET=6;
+
+/* ======================= EXAMS ======================= */
+const EX={
+ listening:{name:'Listening',c:'var(--L)',cs:'var(--Lsoft)',url:'https://nana390-tech.github.io/IELTS-Series-MOCK-Final-Listening-SET-2/',meta:'≈ 29 minutes · 40 questions · 4 parts',
+   list:['The recording plays <b>once</b>','Read ahead while you listen','2 minutes to check at the end'],
+   bands:[[39,9],[37,8.5],[35,8],[32,7.5],[30,7],[26,6.5],[23,6],[18,5.5],[16,5],[13,4.5],[10,4],[8,3.5],[6,3],[4,2.5],[0,0]],
+   icon:`<svg width="64" height="64" viewBox="0 0 64 64"><g fill="#7f1d1d"><rect class="bar" x="8" y="18" width="7" height="30" rx="3"/><rect class="bar" x="19" y="10" width="7" height="44" rx="3"/><rect class="bar" x="30" y="22" width="7" height="24" rx="3"/><rect class="bar" x="41" y="8" width="7" height="48" rx="3"/><rect class="bar" x="52" y="16" width="7" height="32" rx="3"/></g></svg>`},
+ reading:{name:'Reading',c:'var(--R)',cs:'var(--Rsoft)',url:'https://nana390-tech.github.io/IELTS-Series-MOCK-Final---Reading-Set-2/',meta:'60 minutes · 40 questions · 3 passages',
+   list:['Passages get harder: Band 6 → 7','Use the highlighter','Answer every question'],
+   bands:[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4],[8,3.5],[6,3],[4,2.5],[0,0]],
+   icon:`<svg width="70" height="64" viewBox="0 0 100 80"><path d="M50 14 C38 6 20 6 8 10 V70 C20 66 38 66 50 74 Z" fill="#134e4a"/><path d="M50 14 C62 6 80 6 92 10 V70 C80 66 62 66 50 74 Z" fill="#1f766f"/><path class="page" d="M50 14 C60 9 74 9 84 12 V66 C74 63 60 64 50 70 Z" fill="#fff" stroke="#134e4a" stroke-width="2"/><g stroke="#134e4a" stroke-width="2" opacity=".5"><line x1="16" y1="24" x2="42" y2="22"/><line x1="16" y1="34" x2="42" y2="32"/><line x1="16" y1="44" x2="42" y2="42"/></g></svg>`},
+ writing:{name:'Writing',c:'var(--W)',cs:'var(--Wsoft)',url:'https://nana390-tech.github.io/IELTS-Series-MOCK-Final---Writing-Set-2/',meta:'60 minutes · Task 1 + Task 2',
+   list:['Task 1: line graph + bar chart (150+ words)','Task 2: cause–solution essay (250+ words)','No spell-check, no pasting'],
+   icon:`<svg width="70" height="64" viewBox="0 0 80 70"><rect x="6" y="8" width="56" height="54" rx="6" fill="#fff" stroke="#831843" stroke-width="3"/><g stroke="#f0c4d6" stroke-width="2"><line x1="14" y1="24" x2="54" y2="24"/><line x1="14" y1="34" x2="54" y2="34"/></g><path class="ink" d="M14 46 q8 -6 14 0 t14 0 t14 0" fill="none" stroke="#831843" stroke-width="3" stroke-linecap="round"/><g class="pen"><path d="M52 50 L70 22 L76 26 L58 54 Z" fill="#14b8a6"/><path d="M52 50 L58 54 L50 58 Z" fill="#2a1d17"/></g></svg>`}
+};
+const ORDER=['listening','reading','writing'];
+
+/* ======================= TIPS (per question type) ======================= */
+const TIPS={
+ 'True / False / Not Given':['Use names, numbers and capital letters to find the right part of the passage quickly.','<b>FALSE</b> = the passage says the <i>opposite</i>. <b>NOT GIVEN</b> = the passage says <i>nothing</i> about it. Ask: "Can I find a sentence that disagrees?"','Watch small words that change meaning: <i>all, only, always, never, most, some</i>.','Don\'t use your own knowledge. Only the passage counts.'],
+ 'Yes / No / Not Given':['These questions are about the <b>writer\'s opinion</b>. Look for opinion language: <i>I believe, it is clear that, surprisingly, none of this means…</i>','<b>NO</b> = the writer disagrees. <b>NOT GIVEN</b> = the writer never says what they think about it.','The questions follow the order of the passage. Use the previous answer to find the next one.'],
+ 'Summary completion':['Read the summary first and predict the <b>type of word</b> for each gap (noun, verb, adjective?).','The summary uses <b>paraphrases</b>. Find the part of the passage it summarises, then look for the exact word.','Check the word limit (ONE WORD ONLY!) and copy the spelling exactly from the passage.','Read the full sentence again with your answer in it. Is the grammar correct?'],
+ 'Matching headings':['Read the <b>first two sentences and the last sentence</b> of each paragraph. That is usually where the main idea is.','A heading gives the <b>main idea</b>, not one small detail. Words that match the text exactly are often traps.','Do the easiest paragraphs first, then cross out the headings you have used.'],
+ 'Multiple choice':['Underline the key words in the question, then find that place in the text before you look at the options.','Cross out options that are wrong. Several options may use words from the text, but only one has the same <b>meaning</b>.','Be careful with options that are true but do not answer <i>this</i> question.'],
+ 'Sentence completion':['The completed sentence must be <b>grammatically correct</b>. Predict the word type before you search.','Follow the word limit. In "NO MORE THAN TWO WORDS", three words = wrong.','Answers usually follow the order of the passage.'],
+ 'Matching features':['First, <b>scan</b> for each name in the passage and underline it. Names can appear more than once.','Read the sentences around each name carefully. The statements are paraphrased.','Some letters may be used more than once. Some may not be used at all.'],
+ 'Matching sentence endings':['Check that the beginning + ending make sense <b>and</b> are grammatically correct.','Find the first part of the sentence in the passage, then read on to see what the writer says about it.','Two endings are extra. They often contain words from the passage but the wrong idea.'],
+ 'Form / note completion':['Practise <b>spelling</b> names, postcodes and letters (W/double-u, G/J, A/E/I).','Learn the different ways to say dates and numbers (24th April / April 24).','Listen for <b>corrections</b>: "Sorry, I mean…", "Actually, it\'s…". The second answer is usually correct.','Predict the type of word for each gap before the recording starts.'],
+ 'Note completion':['Part 4 is a lecture with <b>no break</b>. Use the headings in the notes to follow where the speaker is.','Check <b>singular or plural</b>: "fences" is not the same as "fence".','Write ONE WORD ONLY when the instruction says so. Two words = wrong.','The words in the notes are paraphrased, so listen for synonyms.'],
+ 'Choose TWO letters':['The two answers can come in <b>any order</b>.','Speakers often talk about all five options. Listen for agreement or disagreement ("Yes, definitely" / "I\'m not sure about that").','Cross out an option as soon as you hear it rejected.'],
+'Matching information':['The information is usually a <b>detail</b> (an example, a reason, a comparison), not the main idea of a paragraph.','Underline the key noun in each statement (e.g. <i>comparison, origin, example</i>) and think what it would look like in the text.','Letters can be used more than once, and some paragraphs may not be used at all.','Do the questions with clear names or numbers first.'],
+ 'Short-answer questions':['Check the word limit: NO MORE THAN TWO WORDS means one or two words.','Answers follow the order of the passage.','Copy the words <b>exactly</b> from the passage. Don\'t change the form.','Use question words (what, which, where) to predict the kind of answer.'],
+ 'Summary completion (word box)':['Decide the <b>word type</b> each gap needs before you look at the box.','The box often has two words with similar meanings. Only one fits the meaning <b>and</b> grammar.','Find the part of the passage that the summary covers, then read it closely.','Cross out the letters you have used.'],
+ 'Flow-chart completion':['A flow-chart shows <b>steps in order</b>. Find the first step in the passage, then follow the text.','Check the word limit and copy the spelling exactly.','Use the words before and after each gap to predict the answer.'],
+ 'Classification':['Read the options (A, B, C) first and underline them in the passage.','Find what the text says about <b>each</b> option. Statements are paraphrased.','"Both" (or "C") is only correct if the text clearly connects the statement to <b>both</b> things.'],
+ 'Table completion':['Read the column headings first: they tell you what kind of information goes in each gap.','Listen for numbers and prices carefully, e.g. <i>£9.75</i>.','Answers usually go across the table row by row.','Check your spelling of street names and places.'],
+ 'Map labelling':['Before you listen, find the <b>starting point</b> on the map (an entrance, a road) and the compass directions.','Learn direction language: <i>opposite, next to, on the corner, beyond, to the left of, at the end of</i>.','Follow the speaker\'s route with your finger or pen.','The places come in order, so if you miss one, move on.'],
+ 'Matching':['Read the box of options carefully <b>before</b> the recording starts. Underline the key words.','The speaker uses different words from the box. Listen for the meaning, not the same word.','Questions follow the order of the recording, but the options in the box do not.']
+};
+const LINKS={
+ reading:[['Final Exam Set 1 · Reading','https://nana390-tech.github.io/IELTS-Series-MOCK-Final-Reading-Set-1/'],['Reading Test 1 · The Wood Wide Web','https://nana390-tech.github.io/IELTS-Series-Reading---Reading-for-Final-A/'],['Reading Test 2 · The Pen and the Keyboard','https://nana390-tech.github.io/IELTS-Series-Reading-for-Final-B/'],['Reading Test 3 · The Uses of Nostalgia','https://nana390-tech.github.io/IELTS-Series-Reading-for-Final-C/'],['Reading Test 4 · Turning the Sea into Drinking Water','https://nana390-tech.github.io/IELTS-Series-Reading-for-Final-D/'],['Dissecting Readings 2','https://nana390-tech.github.io/LSC-0316-Dissecting-Reading-2/']],
+ listening:[['Final Exam Set 1 · Listening','https://nana390-tech.github.io/IELTS-Series-MOCK-Listening-Set-1/'],['Listening Test 10A','https://nana390-tech.github.io/IELTS-Series-Listening---IELTS-Test-10A/'],['Listening Test 10B','https://nana390-tech.github.io/IELTS-Series-Listening-IELTS-Test-10B/'],['Listening Test 10C','https://nana390-tech.github.io/IELTS-Series-Listening-IELTS-Test-10C/'],['Listening Test 10D','https://nana390-tech.github.io/IELTS-Series-Listening-IELTS-Test-10D/']],
+ writing:[['Final Exam Set 1 · Writing','https://nana390-tech.github.io/IELTS-Series-MOCK-Final---Writing-Set-1/'],['Line Graph Chalkboard','https://nana390-tech.github.io/IELTS-Series-Writing-Task-1-Line-graph-CHALKBOARD/']]
+};
+
+/* ======================= STORAGE ======================= */
+function get(k){ try{ const v=localStorage.getItem(KEY+k); return v?JSON.parse(v):null; }catch(e){ return null; } }
+function put(k,v){ try{ localStorage.setItem(KEY+k, JSON.stringify(v)); }catch(e){} }
+let current=null;
+
+/* ======================= HELPERS ======================= */
+function ring(val,max,label,color,size=76){
+  const r=(size-10)/2, C=2*Math.PI*r;
+  return `<div class="ring" style="width:${size}px;height:${size}px"><svg width="${size}" height="${size}"><circle cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="#fff" stroke-width="9"/><circle class="fg" cx="${size/2}" cy="${size/2}" r="${r}" fill="none" stroke="${color}" stroke-width="9" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-off="${C*(1-Math.min(1,val/max))}"/></svg><div class="val">${label}</div></div>`;
+}
+function animateRings(){ requestAnimationFrame(()=>requestAnimationFrame(()=>{ $$('circle.fg[data-off]').forEach(c=>c.style.strokeDashoffset=c.dataset.off); $$('.bbar i[data-w]').forEach(i=>i.style.width=i.dataset.w); })); }
+function nextBand(score,bands){ const asc=[...bands].sort((a,b)=>a[0]-b[0]); for(const [min,b] of asc) if(min>score) return {need:min-score,band:b}; return null; }
+function needFor(score,bands,band){ const row=bands.find(x=>x[1]===band); return row?Math.max(0,row[0]-score):0; }
+function pctCls(p){ return p>=75?'var(--good)':p>=50?'var(--mid)':'var(--low)'; }
+function toast(m){ let t=$('.toast'); if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t);} t.textContent=m; t.style.display='block'; clearTimeout(t._h); t._h=setTimeout(()=>t.style.display='none',3200); }
+function roundIELTS(x){ return Math.round(x*2)/2; }
+
+/* ======================= JOURNEY CARDS ======================= */
+function renderJourney(){
+  const j=$('#journey'); j.querySelectorAll('.ecard').forEach(e=>e.remove());
+  ORDER.forEach((k,i)=>{
+    const e=EX[k], d=get(k);
+    let status;
+    if(!d) status=`<div class="pending-dot" style="--c:${e.c}">⏳</div><div class="txt"><b>Not taken yet</b>Your result and feedback will appear here.</div>`;
+    else if(k==='writing') status=`${ring(Math.min(d.w1,150)+Math.min(d.w2,250),400,'✓',e.c)}<div class="txt"><b>Submitted</b>Task 1: ${d.w1} words · Task 2: ${d.w2} words<br><span class="note">Your teacher gives the band.</span></div>`;
+    else status=`${ring(d.score,40,d.band.toFixed(1),e.c)}<div class="txt"><b>Band ${d.band.toFixed(1)}</b>${d.score}/40 correct<br><span class="note">${new Date(d.finishedAt).toLocaleDateString()}</span></div>`;
+    const card=document.createElement('article'); card.className='ecard'; card.style.cssText=`--c:${e.c};--cs:${e.cs}`;
+    card.innerHTML=`<div class="num">${i+1}</div><div class="icon">${e.icon}</div><h2>${e.name}</h2><div class="meta">${e.meta}</div><ul>${e.list.map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="status">${status}</div>
+      <div class="btns"><a class="btn go" href="${e.url}" target="_blank">${d?'↻ Take again':'▶ Start exam'}</a><button class="btn fb" data-show="${k}" ${d?'':'disabled'}>📊 Feedback</button></div>`;
+    j.appendChild(card);
+  });
+  $$('[data-show]').forEach(b=>b.onclick=()=>{ show(b.dataset.show); $('#feedback').scrollIntoView(); });
+}
+
+/* ======================= OVERALL ======================= */
+function renderOverall(){
+  const L=get('listening'), R=get('reading'), W=get('writing');
+  $('#ovL').textContent=L?L.band.toFixed(1):'–'; $('#ovR').textContent=R?R.band.toFixed(1):'–';
+  if(L&&R){ const a=roundIELTS((L.band+R.band)/2); $('#ovA').textContent=a.toFixed(1);
+    $('#ovText').innerHTML = a>=TARGET?`Brilliant! Your Listening and Reading average reaches the <b>Band ${TARGET}</b> target.`:`Your average is <b>${(TARGET-a).toFixed(1)}</b> below the Band ${TARGET} target. Your feedback below shows exactly where to gain marks.`; }
+  else $('#ovA').textContent='–';
+  const nm=(L||R||W||{}).name; $('#hello').textContent = nm?`Welcome back, ${nm} 👋 · ${[L,R,W].filter(Boolean).length} of 3 exams completed`:'';
+}
+
+/* ======================= FEEDBACK: LISTENING / READING ======================= */
+function feedbackLR(k,d){
+  const e=EX[k], bands=e.bands, pct=Math.round(d.score/d.outOf*100);
+  const nb=nextBand(d.score,bands), toTarget=needFor(d.score,bands,TARGET);
+  let headline, msg;
+  if(d.band>=7){ headline='Outstanding result! 🌟'; msg=`You scored above the Band ${TARGET} target. Now work on accuracy in your weakest question types to stay at this level.`; }
+  else if(d.band>=TARGET){ headline='Target reached! 🎉'; msg=`You reached Band ${TARGET}. ${nb?`Only <b>${nb.need}</b> more correct answer${nb.need>1?'s':''} would give you Band <b>${nb.band.toFixed(1)}</b>.`:''}`; }
+  else if(toTarget<=4){ headline='So close! 💪'; msg=`You need just <b>${toTarget}</b> more correct answer${toTarget>1?'s':''} to reach Band ${TARGET}. That can come from one question type.`; }
+  else { headline='Good effort. Now let\'s build up. 🧱'; msg=`You need <b>${toTarget}</b> more correct answers for Band ${TARGET}. Focus on the two weakest question types below. That is the fastest way to gain marks.`; }
+  const ladder=[...new Set(bands.map(b=>b[1]))].filter(b=>b>=4&&b<=8).sort((a,b)=>a-b).map(b=>`<span class="${d.band>=b?'hit':''} ${b===TARGET?'target':''}">${b.toFixed(1)}</span>`).join('');
+
+  // by type
+  const types=Object.entries(d.byType).map(([t,v])=>({t,c:v.c,n:v.t,p:Math.round(v.c/v.t*100)})).sort((a,b)=>a.p-b.p);
+  const typeRows=[...types].sort((a,b)=>b.p-a.p).map(x=>`<div class="brow"><span>${esc(x.t)}${x.p>=80?'<span class="tag s">strength</span>':x.p<50?'<span class="tag w">focus</span>':''}</span><b>${x.c}/${x.n}</b><div class="bbar"><i data-w="${x.p}%" style="background:${pctCls(x.p)}"></i></div></div>`).join('');
+  const partRows=d.byPart.map(p=>{const q=Math.round(p.c/p.t*100);return `<div class="brow"><span>${esc(p.label)}</span><b>${p.c}/${p.t}</b><div class="bbar"><i data-w="${q}%" style="background:${pctCls(q)}"></i></div></div>`;}).join('');
+  const weak=types.filter(x=>x.p<80).slice(0,3);
+  const strong=types.filter(x=>x.p>=80).map(x=>x.t);
+
+  // insights
+  const ins=[];
+  if(strong.length) ins.push(['💚',`<b>Your strengths:</b> ${strong.map(esc).join(', ')}. Keep using the same strategies.`]);
+  if(weak.length) ins.push(['🎯',`<b>Biggest opportunity:</b> ${esc(weak[0].t)} (${weak[0].c}/${weak[0].n}). ${weak[0].n-weak[0].c} mark${weak[0].n-weak[0].c>1?'s':''} available here.`]);
+  const parts=d.byPart.map(p=>p.c/p.t);
+  if(parts.length>=3){ const first=parts[0], last=parts[parts.length-1];
+    if(first-last>=0.35) ins.push(['📉',`Your score drops a lot in the later ${k==='reading'?'passages':'parts'} (${d.byPart[0].c}/${d.byPart[0].t} → ${d.byPart[d.byPart.length-1].c}/${d.byPart[d.byPart.length-1].t}). ${k==='reading'?'Passage 3 is the hardest. Practise reading longer academic texts and keep 20 minutes for it.':'Parts 3 and 4 are academic. Practise following discussions and lectures, and use the 30 seconds before each part to read ahead.'}`]);
+    else if(last>=first) ins.push(['📈',`You stayed strong even in the harder ${k==='reading'?'passages':'parts'}. That is a great sign.`]); }
+  if(d.unanswered>0) ins.push(['⚠️',`You left <b>${d.unanswered}</b> question${d.unanswered>1?'s':''} unanswered. There is no penalty for wrong answers, so <b>always guess</b>. A blank is always zero.`]);
+  if(k==='reading'&&d.timeUsedMin!=null){
+    if(d.timeUsedMin<45&&d.band<7) ins.push(['⏱',`You finished in <b>${d.timeUsedMin} minutes</b>. You had 60. Use the extra time to check your answers and find the evidence in the passage.`]);
+    else if(d.timeUsedMin>=59&&d.unanswered>0) ins.push(['⏱','You ran out of time. Try the 20-minutes-per-passage rule, and don\'t spend more than 2 minutes on one question.']); }
+  if(d.tabSwitches>0) ins.push(['👀',`You left the exam page ${d.tabSwitches} time(s). In the real exam, stay focused on the test screen.`]);
+
+  const wrongs=d.wrong.map(w=>`<span title="${esc(w.type)}">${w.n}</span>`).join('');
+  const tipCards=weak.map(x=>TIPS[x.t]?`<div class="tipcard"><b>${esc(x.t)}</b> <span class="note">(${x.c}/${x.n})</span><ol>${TIPS[x.t].map(t=>`<li>${t}</li>`).join('')}</ol></div>`:'').join('') || '<p>Excellent: no weak question types! Keep practising with full tests to stay sharp.</p>';
+
+  // plan
+  const plan=[];
+  if(weak[0]) plan.push([`Practise <b>${esc(weak[0].t)}</b> using the tips above. Try 10 questions of this type and check every wrong answer.`,'This week']);
+  if(weak[1]) plan.push([`Then practise <b>${esc(weak[1].t)}</b>. Write the strategy in your notebook in your own words.`,'This week']);
+  if(k==='reading'){
+    plan.push(['Read one short English article every day (news, science or education) and write 2 sentences about the main idea. This builds speed for Passage 3.','Every day']);
+    plan.push(['Keep a <b>paraphrase notebook</b>: when you check answers, write the question words and the passage words side by side (e.g. <i>warned in advance</i> = <i>told that there would be a test</i>).','After each test']);
+    plan.push(['Practise with timing: 20 minutes per passage. Move on if you are stuck, then come back.','Next practice test']);
+  } else {
+    plan.push(['Listen to English for 15 minutes every day (podcasts, YouTube talks). Once a week, write down 5 sentences you hear: dictation trains your ear.','Every day']);
+    plan.push(['Make a <b>spelling list</b> of words you got wrong and practise spelling names, numbers and dates aloud.','After each test']);
+    plan.push(['In the next test, use the pause before each part to <b>read ahead</b> and predict the answers (noun? number? name?).','Next practice test']);
+  }
+  plan.push(['Retake this exam in one week <b>without</b> looking at the answers first, and compare your score.','Next week']);
+
+  return `<div class="fb-hero">${ring(d.score,40,d.band.toFixed(1),e.c,120)}<div><h3>${headline}</h3><p>${esc(d.name)}: <b>${d.score}/40</b> correct (${pct}%) → estimated <b>Band ${d.band.toFixed(1)}</b>.${d.timeUsedMin!=null&&k==='reading'?` Time used: ${d.timeUsedMin} min.`:''}</p><p style="margin-top:6px">${msg}</p><div class="ladder" title="Band ladder (green outline = target)">${ladder}</div></div></div>
+   <div class="grid2"><div class="box"><h4>🧩 Score by question type</h4>${typeRows}</div><div class="box"><h4>📚 Score by ${k==='reading'?'passage':'part'}</h4>${partRows}<p class="note" style="margin:10px 0 0">${k==='reading'?'Passages get harder from 1 to 3.':'Parts get harder from 1 to 4.'}</p></div></div>
+   <div class="box"><h4>💡 What your results tell us</h4>${ins.map(x=>`<div class="insight"><span class="i">${x[0]}</span><span>${x[1]}</span></div>`).join('')}
+     ${wrongs?`<p style="margin:12px 0 4px"><b>Questions to review</b> <span class="note">(open the exam results page to see the correct answers${k==='reading'?' and evidence':''})</span>:</p><div class="wrongs">${wrongs}</div>`:''}</div>
+   <div class="box"><h4>🛠 Strategies for your focus areas</h4>${tipCards}</div>
+   <div class="box"><h4>🚀 Your next steps</h4><ol class="plan">${plan.map(p=>`<li>${p[0]}<span class="when">${p[1]}</span></li>`).join('')}</ol>
+     <p style="margin:14px 0 4px"><b>Practise with your class apps:</b></p><div class="links">${LINKS[k].map(l=>`<a href="${l[1]}" target="_blank">${l[0]} ↗</a>`).join('')}</div></div>`;
+}
+
+/* ======================= FEEDBACK: WRITING ======================= */
+const PROMPT1='The line graph below shows the average number of students who used three library services at a university each day between 2015 and 2025. The bar chart shows the main reasons students gave for using the library in 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.';
+const PROMPT2='In many countries, fewer and fewer young people are choosing to read books in their free time. Why is this happening? What can be done to encourage young people to read more?';
+const LINKERS=['overall','in addition','however','whereas','while','in contrast','similarly','followed by','then','after that','moreover','furthermore','firstly','secondly','finally','for example','for instance','such as','as a result','therefore','consequently','because','so that','another','in conclusion','to conclude','to sum up','on the other hand','although','also','the main cause','another reason','because of','due to','this is because','which leads to','turning to','looking at','meanwhile','by contrast'];
+const TREND=['increase','increased','rose','rise','grew','growth','fell','fall','decreased','decrease','decline','declined','dropped','drop','peaked','peak','fluctuated','remained','stable','steadily','sharply','gradually','dramatically','slightly','significantly','overtook','recovered','recovering','doubled','reached','steady','climbed','climb'];
+const COMPARE=['whereas','while','in contrast','compared','than','highest','lowest','most','least','similar','followed by','by contrast','the same','twice'];
+const KEYNUM=['620','540','300','480','150','410','120','200','720','600','38','24','18','12','8'];
+const STOP=new Set('the a an and or but of to in on at for with from by is are was were be been this that these those it its they their there which who what when where as so than then also very more most less many much some such into over about after before during between each other only not have has had do does did can could would should will may might our your his her them we you i he she one two three'.split(' '));
+const TOPIC1=new Set(['students','student','library','services','service','reading','rooms','room','group','study','online','reasons','graph','chart','line','percentage','number','between','period','years','year','daily','users','used','university']);
+const TOPIC2=new Set(['young','people','read','reading','books','book','pleasure','free','time','problem','solution','solutions','causes','encourage','children','students']);
+
+function analyse(t,task){
+  const txt=(t||'').trim(), low=' '+txt.toLowerCase().replace(/\s+/g,' ')+' ';
+  const words=(txt.match(/[A-Za-z0-9][A-Za-z0-9'’%.,-]*/g)||[]).length;
+  const paras=txt.split(/\n+/).map(p=>p.trim()).filter(Boolean);
+  const sents=txt.split(/(?<=[.!?])\s+|\n+/).map(s=>s.trim()).filter(s=>/[a-z]/i.test(s));
+  const has=w=>new RegExp('[^a-z]'+w.replace(/ /g,'\\s+')+'[^a-z]').test(low);
+  const linkers=LINKERS.filter(has);
+  const capErr=sents.filter(s=>/^[a-z]/.test(s)).length;
+  const lowerI=(txt.match(/(^|\s)i(?=[\s,.'’])/g)||[]).length;
+  const contractions=(txt.match(/\b\w+(n['’]t|['’]re|['’]ve|['’]ll|['’]m)\b|\b(it|that|there|what)['’]s\b/gi)||[]);
+  const informal=(low.match(/\b(gonna|wanna|u|ur|kids|stuff|things|a lot of|lots of|ok|okay)\b/g)||[]);
+  const subord=(low.match(/\b(which|who|because|although|when|while|if|that|so that|whereas|since)\b/g)||[]).length;
+  const avg=sents.length?Math.round(words/sents.length):0;
+  // copying from prompt (6-word chunks)
+  const P=(task===1?PROMPT1:PROMPT2).toLowerCase().replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(Boolean);
+  const grams=new Set(); for(let i=0;i+6<=P.length;i++) grams.add(P.slice(i,i+6).join(' '));
+  const T=txt.toLowerCase().replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(Boolean); let copied=0; for(let i=0;i+6<=T.length;i++) if(grams.has(T.slice(i,i+6).join(' '))){ copied++; i+=5; }
+  // overused words
+  const cnt={}; T.forEach(w=>{ if(w.length>3&&!STOP.has(w)&&!/^\d/.test(w)&&!(task===1?TOPIC1:TOPIC2).has(w)) cnt[w]=(cnt[w]||0)+1; });
+  const overused=Object.entries(cnt).filter(([w,c])=>c>=4).sort((a,b)=>b[1]-a[1]).slice(0,4);
+  const A={words,paras:paras.length,sents:sents.length,avg,linkers,capErr,lowerI,contractions,informal,subord,copied,overused,has};
+  if(task===1){
+    A.overview=has('overall')||has('in general')||has('it is clear');
+    A.line=/line (graph|chart)/.test(low); A.bar=/bar (chart|graph)/.test(low);
+    A.nums=(txt.match(/\d[\d,.]*\s*%?/g)||[]).length;
+    A.keyNums=KEYNUM.filter(n=>new RegExp('(^|[^\\d])'+n+'(,000|%| thousand|\\b)').test(txt)).length;
+    A.trend=TREND.filter(w=>new RegExp('\\b'+w+'\\b').test(low));
+    A.compare=COMPARE.filter(has);
+    A.presentTrend=(low.match(/\b(increases|rises|falls|grows|decreases|drops|declines)\b/g)||[]).length;
+    A.opinion=/\b(i think|in my opinion|i believe|i feel)\b/.test(low);
+  } else {
+    A.intro=/in this essay|this essay will|i will (discuss|explain)/.test(low);
+    A.cause=(low.match(/\b(cause|causes|reason|reasons|because|due to|as a result of|leads? to|result in|this is why)\b/g)||[]).length;
+    A.solution=(low.match(/\b(solution|solutions|solve|should|could|one way|measure|measures|tackle|can be done|it is important to|need to)\b/g)||[]).length;
+    A.example=/for example|for instance|such as/.test(low);
+    A.conclusion=/in conclusion|to conclude|to sum up|to summari[sz]e/.test(low);
+  }
+  return A;
+}
+function level(score){ return score>=3?['Strong','var(--good)']:score>=2?['Good','#65a30d']:score>=1?['Developing','var(--mid)']:['Needs work','var(--low)']; }
+function critBlock(c){ return `<div class="crit">${c.map(([n,s])=>{const [l,col]=level(s);return `<div><div class="cn">${n}</div><div class="lv" style="color:${col}">${l}</div><div class="dots">${[0,1,2].map(i=>`<i class="${i<s?'on':''}"></i>`).join('')}</div></div>`;}).join('')}</div>`; }
+
+function writingTask(d,task){
+  const t=task===1?d.t1:d.t2, A=analyse(t,task), min=task===1?150:250;
+  const good=[], fix=[];
+  const add=(ok,g,f)=>{ if(ok) good.push(g); else if(f) fix.push(f); };
+  if(!A.words) return `<div class="empty"><div class="e">📝</div>You did not write anything for Task ${task}.<br>In the real exam this scores zero. Always write something, even if it is short.</div>`;
+  add(A.words>=min,`Length: <b>${A.words} words</b> (minimum ${min}).`,`<b>Too short: ${A.words} words.</b> Answers under ${min} words lose marks. Aim for ${task===1?'170–190':'270–300'} words.`);
+  add(A.paras>=4,`Clear paragraphs: <b>${A.paras}</b>.`,`You wrote <b>${A.paras}</b> paragraph${A.paras===1?'':'s'}. Use 4: ${task===1?'introduction, overview, body 1 (line graph), body 2 (bar chart)':'introduction, causes, solutions, conclusion'}. Press Enter between paragraphs.`);
+  add(A.copied<2,'You used your own words in the introduction.',`You copied <b>${A.copied}</b> long phrase${A.copied>1?'s':''} from the question. Copied words are not counted. Paraphrase (e.g. <i>${task===1?'the average number of students who used → how many students used each day':'fewer young people are choosing to read → young people spend less time reading'}</i>).`);
+  add(A.linkers.length>=6,`Good range of linking words (${A.linkers.length}): ${A.linkers.slice(0,8).map(l=>`<span class="chipw">${l}</span>`).join('')}`,`Only <b>${A.linkers.length}</b> linking word${A.linkers.length===1?'':'s'}${A.linkers.length?': '+A.linkers.map(l=>`<span class="chipw">${l}</span>`).join(''):''}. Use more, e.g. ${task===1?'<i>Overall, However, In contrast, whereas, followed by</i>':'<i>The main cause is, Another reason is, For example, As a result, Firstly, In conclusion</i>'}.`);
+  if(task===1){
+    add(A.overview,'You wrote an <b>overview</b> (the most important paragraph in Task 1).','<b>No overview found.</b> Write a paragraph starting with <i>Overall,</i> that gives the main trends of BOTH charts, with no numbers. Without an overview, Task Achievement cannot go above Band 5.');
+    add(A.line&&A.bar,'You described both the line graph and the bar chart.',`Mention ${!A.line&&!A.bar?'both charts':!A.line?'the <b>line graph</b>':'the <b>bar chart</b>'} clearly. You must report on <b>both</b> charts.`);
+    add(A.nums>=6,`You supported your points with data (<b>${A.nums}</b> numbers; ${A.keyNums}/${KEYNUM.length} key figures).`,`Only <b>${A.nums}</b> numbers used. Support each main point with data, e.g. <i>rose from 5,000 to 38,000</i>, <i>34% of parents</i>.`);
+    add(A.trend.length>=5,`Good trend vocabulary: ${A.trend.slice(0,8).map(w=>`<span class="chipw">${w}</span>`).join('')}`,`Use more trend vocabulary (you used ${A.trend.length}): <i>rose gradually, fell sharply, peaked at, recovered, overtook, remained stable</i>.`);
+    add(A.compare.length>=3,'You made comparisons between the data.','Add comparisons: <i>whereas, in contrast, the most popular, followed by, higher than</i>.');
+    add(A.presentTrend===0,'You used past tenses for past years.',`Use the <b>past simple</b> for past years: <i>rose, fell, grew</i>. You used present forms ${A.presentTrend} time(s), such as <i>increases/rises</i>.`);
+    add(!A.opinion,'You stayed objective (no personal opinion).','Do <b>not</b> give your opinion in Task 1 (<i>I think…</i>). Only report what the charts show.');
+  } else {
+    add(A.intro,'Your introduction tells the reader what the essay will do.','Finish your introduction with an outline sentence: <i>In this essay, I will discuss the main causes of this problem and suggest some solutions.</i>');
+    add(A.cause>=3,`You explained the <b>causes</b> (${A.cause} cause expressions).`,'The question asks <b>WHY</b>. Write a full paragraph of causes: <i>The main cause is… Another reason is that… This is because…</i>');
+    add(A.solution>=3,`You suggested <b>solutions</b> (${A.solution} solution expressions).`,'The question also asks what can be done. Write a full paragraph of solutions: <i>Firstly, schools could… Secondly, parents should…</i>');
+    add(A.example,'You supported ideas with examples.','Add at least one example to each body paragraph: <i>For example, short videos give instant entertainment, so a book can seem slow…</i>');
+    add(A.conclusion,'You wrote a clear conclusion.','Finish with a conclusion paragraph that starts <i>In conclusion,</i> and summarises the causes and solutions. Don\'t add new ideas.');
+  }
+  // grammar & accuracy
+  add(A.capErr===0&&A.lowerI===0,'Capital letters at the start of sentences are correct.',`Check capital letters: ${A.capErr?`${A.capErr} sentence${A.capErr>1?'s':''} start${A.capErr>1?'':'s'} with a small letter`:''}${A.capErr&&A.lowerI?'; ':''}${A.lowerI?`“i” should always be “I” (${A.lowerI}×)`:''}.`);
+  add(A.contractions.length===0,'Formal style: no contractions.',`Avoid contractions in academic writing: ${[...new Set(A.contractions.map(c=>c.toLowerCase()))].slice(0,5).map(c=>`<span class="chipw">${esc(c)}</span>`).join('')} → write the full form (<i>do not, it is</i>).`);
+  add(A.informal.length===0,'Your vocabulary is suitably formal.',`Replace informal words: ${[...new Set(A.informal)].map(w=>`<span class="chipw">${esc(w)}</span>`).join('')} (e.g. <i>kids → children, a lot of → many / a large number of</i>).`);
+  add(A.subord>=4&&A.avg>=10&&A.avg<=28,`Good sentence variety (average ${A.avg} words per sentence, ${A.subord} complex-sentence words).`,A.avg>28?`Your sentences are very long (average ${A.avg} words). Split long sentences to avoid grammar mistakes.`:`Use more complex sentences with <i>which, because, although, while, when</i> (you used ${A.subord}).`);
+  if(A.overused.length) fix.push(`Repeated words: ${A.overused.map(([w,c])=>`<span class="chipw">${esc(w)} ×${c}</span>`).join('')}. Use synonyms or pronouns to vary your vocabulary.`);
+
+  // criteria indicators (0-3)
+  const tr = task===1 ? [A.words>=min,A.overview,A.line&&A.bar,A.nums>=6,!A.opinion].filter(Boolean).length : [A.words>=min,A.cause>=3,A.solution>=3,A.example,A.intro].filter(Boolean).length;
+  const cc = [A.paras>=4,A.linkers.length>=6,A.linkers.length>=9,task===1?A.overview:A.conclusion].filter(Boolean).length;
+  const lr = [A.overused.length===0,A.copied<2,A.contractions.length===0&&A.informal.length===0,task===1?A.trend.length>=5:A.cause+A.solution>=8].filter(Boolean).length;
+  const gr = [A.capErr===0&&A.lowerI===0,A.subord>=4,A.avg>=10&&A.avg<=28,task===1?A.presentTrend===0:A.sents>=10].filter(Boolean).length;
+  const sc = n=>Math.min(3,Math.round(n*3/ (n>4?5:4)));
+  let trS=Math.min(3,Math.round(tr*3/5)); if(A.words<min) trS=Math.min(trS, A.words<min*0.6?0:1);
+  const crit=[[task===1?'Task Achievement':'Task Response',trS],['Coherence & Cohesion',sc(cc)],['Vocabulary',sc(lr)],['Grammar',sc(gr)]];
+
+  const ticks=Object.keys(d.checks||{}).filter(k=>k.startsWith(task+'-')&&d.checks[k]).length, tot=(d.checkTotals||{})[task]||7;
+  return `${critBlock(crit)}<p class="note" style="margin:-10px 0 18px">These are <b>automatic indicators</b> based on your text. They are not your band score; your teacher will mark your writing.</p>
+   <div class="grid2"><div class="box"><h4>✅ What you did well</h4>${good.length?`<ul class="checks">${good.map(g=>`<li><span>✔️</span><span>${g}</span></li>`).join('')}</ul>`:'<p>Keep going! Use the list on the right to improve.</p>'}</div>
+   <div class="box"><h4>🔧 What to improve</h4>${fix.length?`<ul class="checks">${fix.map(f=>`<li><span>➜</span><span>${f}</span></li>`).join('')}</ul>`:'<p>Excellent: no major issues found. Ask your teacher for detailed feedback on accuracy.</p>'}</div></div>
+   <div class="box"><h4>🪞 Your self-check</h4><p style="margin:0">You ticked <b>${ticks}/${tot}</b> items on the self-check list after reading the model answer.${ticks<tot?' Go back to the exam results page and look again at the items you did not tick. These are your personal goals.':' Great self-awareness!'}</p></div>`;
+}
+function feedbackW(d){
+  const A1=analyse(d.t1,1), A2=analyse(d.t2,2);
+  const plan=[];
+  if(!A1.overview) plan.push(['Write <b>5 overview sentences</b> for different graphs, each starting with <i>Overall,</i> and with no numbers.','This week']);
+  if(A1.words<150||A2.words<250) plan.push(['Practise writing to the word count under time: Task 1 in 20 minutes, Task 2 in 40 minutes. Count your words at the end.','This week']);
+  if(A1.trend.length<5) plan.push(['Make a trend-vocabulary card: 10 verbs (rose, fell, peaked…) + 6 adverbs (sharply, gradually…) and write one sentence with each.','This week']);
+  if(A2.cause<3||A2.solution<3) plan.push(['Brainstorm before you write: list <b>3 causes</b> and a matching <b>solution for each</b> (5 minutes). Then write one paragraph for causes and one for solutions.','Every essay']);
+  if(A1.linkers.length+A2.linkers.length<12) plan.push(['Learn 10 new linking words and use 6 of them in your next essay. Underline them when you check.','Next essay']);
+  plan.push(['Compare your answers with the model answers on the exam results page. Copy 3 useful phrases from each model into your notebook.','Today']);
+  plan.push(['Rewrite <b>one paragraph</b> of your Task 2 using the feedback above, then show it to your teacher.','This week']);
+  plan.push(['Always save 3 minutes at the end to check capital letters, full stops, plurals (-s) and verb tenses.','Every exam']);
+  const total=d.w1+d.w2;
+  return `<div class="fb-hero">${ring(Math.min(d.w1,150)+Math.min(d.w2,250),400,'✍️','var(--W)',120)}<div><h3>Writing submitted ✔</h3><p>${esc(d.name)}: Task 1 <b>${d.w1}</b> words · Task 2 <b>${d.w2}</b> words${d.timeUsedMin!=null?` · ${d.timeUsedMin} min used`:''}.</p><p style="margin-top:6px">Your teacher will give your official band. Below is an automatic check of your writing with clear steps to improve. Task 2 is worth <b>twice</b> as much as Task 1.</p></div></div>
+   <div class="wsub no-print"><button data-w="1" class="on">Task 1 · Charts</button><button data-w="2">Task 2 · Essay</button></div>
+   <div id="w1" class="pp">${writingTask(d,1)}</div><div id="w2" class="pp hidden">${writingTask(d,2)}</div>
+   <div class="box"><h4>🚀 Your next steps</h4><ol class="plan">${plan.map(p=>`<li>${p[0]}<span class="when">${p[1]}</span></li>`).join('')}</ol>
+     <p style="margin:14px 0 4px"><b>Practise with your class apps:</b></p><div class="links">${LINKS.writing.map(l=>`<a href="${l[1]}" target="_blank">${l[0]} ↗</a>`).join('')}</div>
+     <p class="note" style="margin-top:8px">Also revisit your Problem Tree Lab and Solution Sentence Studio apps for brainstorming and essay sentences.</p></div>`;
+}
+
+/* ======================= SHOW ======================= */
+function show(k){
+  const d=get(k); current=k;
+  $$('.tab').forEach(t=>{ t.classList.toggle('on',t.dataset.k===k); t.disabled=!get(t.dataset.k); });
+  const e=EX[k]; const p=$('#panel');
+  if(!d){ p.innerHTML=`<div class="panel"><div class="empty"><div class="e">🗂</div>No results yet. Take an exam above and your feedback will appear here automatically.</div></div>`; return; }
+  p.innerHTML=`<div class="panel" style="--c:${e.c};--cs:${e.cs}">${k==='writing'?feedbackW(d):feedbackLR(k,d)}</div>`;
+  $$('.wsub button').forEach(b=>b.onclick=()=>{ $$('.wsub button').forEach(x=>x.classList.toggle('on',x===b)); $('#w1').classList.toggle('hidden',b.dataset.w!=='1'); $('#w2').classList.toggle('hidden',b.dataset.w!=='2'); });
+  animateRings();
+}
+function refresh(){
+  renderJourney(); renderOverall();
+  const first=current&&get(current)?current:ORDER.slice().reverse().find(k=>get(k));
+  $$('.tab').forEach(t=>t.disabled=!get(t.dataset.k));
+  if(first) show(first); else $('#panel').innerHTML=`<div class="panel"><div class="empty"><div class="e">🗂</div>No results yet. Start with <b>Listening</b>. Your feedback will appear here as soon as you submit each exam.</div></div>`;
+  animateRings();
+  if(ORDER.every(get)&&!sessionStorage.getItem('set2party')){ try{sessionStorage.setItem('set2party','1');}catch(e){} confetti(); toast('🎉 All three exams completed. Amazing work!'); }
+}
+
+/* ======================= LOAD / CLEAR / PRINT ======================= */
+$('#loadRes').addEventListener('change',e=>{
+  const files=[...e.target.files]; let n=0;
+  files.forEach(f=>{ const r=new FileReader(); r.onload=()=>{ try{ const j=JSON.parse(r.result); const h=j.hub||j; if(h&&['listening','reading','writing'].includes(h.skill)){ put(h.skill,h); n++; toast(`Loaded ${EX[h.skill].name} results ✔`); current=h.skill; refresh(); } else toast('This file has no exam results. Use the results file from the exam\'s results page.'); }catch(err){ toast('That file could not be read.'); } }; r.readAsText(f); });
+  e.target.value='';
+});
+$('#clearBtn').onclick=()=>{
+  const m=document.createElement('div'); m.className='modal'; m.innerHTML=`<div class="box2"><h3 style="margin-top:0">Clear all results?</h3><p>This removes the Listening, Reading and Writing results saved in this browser. Download or print your feedback first if you want to keep it.</p><div class="row"><button class="tbtn" id="cx">Cancel</button><button class="btn go" style="--c:var(--low)" id="ck">Clear</button></div></div>`;
+  document.body.appendChild(m); $('#cx').onclick=()=>m.remove();
+  $('#ck').onclick=()=>{ ORDER.forEach(k=>{ try{localStorage.removeItem(KEY+k);}catch(e){} }); m.remove(); current=null; refresh(); toast('Results cleared from this computer.'); };
+};
+$('#printBtn').onclick=()=>{ if(!current) return toast('No feedback to print yet.'); $$('.pp').forEach(x=>x.dataset.h=x.classList.contains('hidden')?'1':''); $$('.pp').forEach(x=>x.classList.remove('hidden')); setTimeout(()=>{ window.print(); $$('.pp').forEach(x=>{ if(x.dataset.h) x.classList.add('hidden'); }); },100); };
+$$('.tab').forEach(t=>t.onclick=()=>{ if(!t.disabled) show(t.dataset.k); });
+
+/* live updates when an exam is finished in another tab */
+window.addEventListener('storage',e=>{ if(e.key&&e.key.startsWith(KEY)){ current=e.key.slice(KEY.length); refresh(); toast(`✨ New ${EX[current]?EX[current].name:''} results received!`); } });
+window.addEventListener('focus',()=>{ const sig=ORDER.map(k=>(get(k)||{}).finishedAt).join('|'); if(sig!==window._sig){ window._sig=sig; refresh(); } });
+
+/* ======================= DECOR ======================= */
+(function sand(){
+  const cv=$('#stars'), x=cv.getContext('2d'); let W,H,P=[],B=[];
+  const size=()=>{ W=cv.width=cv.offsetWidth; H=cv.height=cv.offsetHeight;
+    P=Array.from({length:Math.round(W*H/7000)},()=>({x:Math.random()*W,y:H*.35+Math.random()*H*.65,r:Math.random()*1.8+.4,v:Math.random()*.9+.3,p:Math.random()*6}));
+    B=Array.from({length:5},(_,i)=>({x:Math.random()*W,y:40+Math.random()*H*.3,s:.35+Math.random()*.4,f:Math.random()*6,z:.6+Math.random()*.6})); };
+  size(); addEventListener('resize',size);
+  const draw=()=>{ x.clearRect(0,0,W,H);
+    P.forEach(p=>{ x.globalAlpha=.55; x.fillStyle='#b4602f'; x.beginPath(); x.arc(p.x,p.y,p.r,0,7); x.fill(); });
+    x.globalAlpha=.7; x.strokeStyle='#5a1e2c'; x.lineWidth=1.6;
+    B.forEach(b=>{ const w=Math.sin(b.f)*5*b.z, s=9*b.z; x.beginPath(); x.moveTo(b.x-s,b.y-w); x.quadraticCurveTo(b.x-s/2,b.y-4*b.z,b.x,b.y); x.quadraticCurveTo(b.x+s/2,b.y-4*b.z,b.x+s,b.y-w); x.stroke(); });
+    x.globalAlpha=1; };
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ draw(); return; }
+  (function f(){ P.forEach(p=>{ p.p+=.02; p.x+=p.v; p.y+=Math.sin(p.p)*.25; if(p.x>W+4){p.x=-4;p.y=H*.35+Math.random()*H*.65;} });
+    B.forEach(b=>{ b.x+=b.s; b.f+=.12; if(b.x>W+30){b.x=-30;b.y=40+Math.random()*H*.3;} }); draw(); requestAnimationFrame(f); })();
+})();
+function confetti(){
+  const cv=document.createElement('canvas'); cv.id='confetti'; document.body.appendChild(cv); const x=cv.getContext('2d'); cv.width=innerWidth; cv.height=innerHeight;
+  const cols=['#f59e0b','#ec4899','#14b8a6','#7f1d1d','#134e4a','#831843','#facc15'];
+  const P=Array.from({length:180},()=>({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*.6,r:5+Math.random()*7,c:cols[Math.floor(Math.random()*cols.length)],vy:2+Math.random()*3,vx:-1.5+Math.random()*3,a:Math.random()*6}));
+  let n=0;(function d(){ x.clearRect(0,0,cv.width,cv.height); P.forEach(p=>{p.y+=p.vy;p.x+=p.vx;p.a+=.1;x.fillStyle=p.c;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillRect(-p.r/2,-p.r/2,p.r,p.r*.6);x.restore();}); if(++n<300) requestAnimationFrame(d); else cv.remove(); })();
+}
+
+window._sig=ORDER.map(k=>(get(k)||{}).finishedAt).join('|');
+refresh();
+})();
+</script>
+</body>
+</html>
